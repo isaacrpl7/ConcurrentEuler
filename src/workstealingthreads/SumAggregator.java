@@ -1,4 +1,4 @@
-package fixedthread;
+package workstealingthreads;
 
 import java.util.List;
 

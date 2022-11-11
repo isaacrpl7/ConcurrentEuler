@@ -1,4 +1,6 @@
-package fixedthread;
+package cached_thread;
+
+import fixedthread.Factorial;
 
 import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
@@ -7,7 +9,7 @@ import java.util.concurrent.CyclicBarrier;
 public class Calculate implements Runnable {
     private int nTermStart;
     private int nTermEnd;
-//    private CyclicBarrier barrier;
+    //private CyclicBarrier barrier;
     private List<Double> terms;
 
     public Calculate(int nTermStart, int nTermEnd, List<Double> terms) {

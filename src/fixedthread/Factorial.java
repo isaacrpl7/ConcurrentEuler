@@ -2,7 +2,7 @@ package fixedthread;
 
 public class Factorial {
     private Double result;
-    Factorial(int num) {
+    public Factorial(int num) {
         Double factorial = 1.0;
         for(int i = 1; i <= num; ++i)
         {
@@ -11,7 +11,7 @@ public class Factorial {
         this.result = factorial;
     }
 
-    Double getResult() {
+    public Double getResult() {
         return this.result;
     }
 }

@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a71f6a8-8550-46ce-9a4a-2f7714508d65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConcurrentEuler.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fixedthread/Calculate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fixedthread/Euler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fixedthread/Factorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fixedthread/SumAggregator.java" afterDir="false" />
+    <list default="true" id="9a71f6a8-8550-46ce-9a4a-2f7714508d65" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/cached_thread/CachedEuler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cached_thread/Calculate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cached_thread/SumAggregator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/workstealingthreads/Calculate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/workstealingthreads/Euler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/workstealingthreads/SumAggregator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixedthread/Calculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixedthread/Calculate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixedthread/Euler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixedthread/Euler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixedthread/Factorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixedthread/Factorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixedthread/SumAggregator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixedthread/SumAggregator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +50,14 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Euler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fixedthread.Euler" />
+  <component name="RunManager" selected="Application.workstealingthreads.Euler">
+    <configuration name="CachedEuler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cached_thread.CachedEuler" />
       <module name="ConcurrentEuler" />
-      <option name="PROGRAM_PARAMETERS" value="7 3" />
+      <option name="PROGRAM_PARAMETERS" value="20" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fixedthread.*" />
+          <option name="PATTERN" value="cached_thread.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,8 +65,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Euler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fixedthread.Euler" />
+      <module name="ConcurrentEuler" />
+      <option name="PROGRAM_PARAMETERS" value="7 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="workstealingthreads.Euler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="workstealingthreads.Euler" />
+      <module name="ConcurrentEuler" />
+      <option name="PROGRAM_PARAMETERS" value="20" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="workstealingthreads.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.workstealingthreads.Euler" />
+      <item itemvalue="Application.CachedEuler" />
+      <item itemvalue="Application.Euler" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.workstealingthreads.Euler" />
+        <item itemvalue="Application.CachedEuler" />
         <item itemvalue="Application.Euler" />
       </list>
     </recent_temporary>
@@ -78,6 +115,14 @@
       <option name="presentableId" value="Default" />
       <updated>1667852347314</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1667958632531</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667958632600</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,5 +135,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
