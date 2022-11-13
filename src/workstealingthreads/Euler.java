@@ -20,6 +20,8 @@ public class Euler {
 
         ExecutorService executor = Executors.newWorkStealingPool();
 
+        int countThreads = 0;
+
         for (int i = 0; i < total_of_terms; i++) {
             int start_position = i;
             int end_position = i + 1;
@@ -27,11 +29,15 @@ public class Euler {
             Calculate thread = new Calculate(start_position, end_position, terms);
 
             executor.submit(thread);
+            if(Thread.activeCount() >= countThreads){
+                countThreads = Thread.activeCount();
+            }
         }
 
         executor.shutdown();
         try {
             executor.awaitTermination(5, TimeUnit.SECONDS);
+            System.out.println("Number of Threads: " + (countThreads));
         } catch (InterruptedException e) {
             System.err.println("Tasks were interrupted.");
         } finally {

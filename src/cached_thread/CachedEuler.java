@@ -7,16 +7,22 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ThreadFactory;
 
 public class CachedEuler {
     public static void main(String[] args){
         int total_of_terms = Integer.parseInt(args[0]);
-
+        final ThreadGroup threadGroup = new ThreadGroup("workers");
         List<Double> terms = Collections.synchronizedList(new ArrayList<Double>());
         SumAggregator aggregator = new SumAggregator(terms);
         //CyclicBarrier barrier = new CyclicBarrier(6, aggregator);
 
-        ExecutorService executor = Executors.newCachedThreadPool();
+        ExecutorService executor = Executors
+                .newCachedThreadPool(new ThreadFactory() {
+                    public Thread newThread(Runnable r) {
+                        return new Thread(threadGroup, r);
+                    }
+                });
 
         for (int i = 0; i < total_of_terms; i++) {
             int start_position = i;
@@ -27,6 +33,7 @@ public class CachedEuler {
             executor.submit(thread);
         }
 
+        System.out.println("Number of Threads: " + (threadGroup.activeCount()));
         executor.shutdown();
         try {
             executor.awaitTermination(5, TimeUnit.SECONDS);
